@@ -19,12 +19,40 @@ export default {
 
 <style scoped lang="stylus">
 @import '../assets/stylus/_colors'
-@import url('https://fonts.googleapis.com/css?family=Tangerine')
+.line-width {
+  a:before, a:after {
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
+  }
+}
+
+.line-width {
+  a:before {
+    left: 0px;
+    top: 0px;
+  }
+  a:after {
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.line-width {
+  a:hover:before, a:hover:after {
+    width: 100%;
+    opacity: 1;
+  }
+}
 
 .navbar
   postition relative
   width 100%
-  height 300px
+  height 325px
   background-color $light-pink
   &__img-container
     display flex
@@ -35,10 +63,9 @@ export default {
       width 200px
   &__menu
     display flex
-    justify-content flex-end
+    justify-content center
     width 90%
     max-width 1300px
-    height 50px
     margin auto
     font-family "Tangerine", cursive
     &__items
@@ -47,10 +74,28 @@ export default {
       font-weight 500
       color $dark
     &__links
+      position relative
+      margin 0px 30px
       text-decoration none
       transition all 0.4s
-      &:hover
-        cursor pointer
-        background-color $dark-pink
-        color white
+      cursor pointer
+      &:before,
+      &:after
+        position absolute
+        opacity 0
+        width 0%
+        height 2px
+        content ''
+        background $dark-pink
+        transition all 0.3s
+      &:before
+        left 0px
+        top 0px
+      &:after
+        right 0px
+        bottom 0px
+      &:hover:before,
+      &:hover:after
+        width 100%
+        opacity 1
 </style>

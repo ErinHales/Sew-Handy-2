@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-
+@import url('https://fonts.googleapis.com/css?family=Gruppo|Josefin+Slab|Poiret+One|Tangerine')
 </style>
